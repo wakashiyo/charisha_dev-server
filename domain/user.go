@@ -2,9 +2,9 @@ package domain
 
 //User user entitiy
 type User struct {
-	ID   string
+	ID   int
 	Name string
 	Mail string
 }
 
-//type Users []User
+type Users []User
