@@ -4,6 +4,9 @@ import (
 	"database/sql"
 
 	"github.com/wakashiyo/charisha_dev-server/interfaces/database"
+
+	//mysql driver
+	_ "github.com/go-sql-driver/mysql"
 )
 
 //DBHandler handler
@@ -13,10 +16,10 @@ type DBHandler struct {
 
 //NewDbHandler create handler
 func NewDbHandler() database.DbHandler {
-	const d = "mysql"
-	const sn = "test:test@tcp(db:3306)/test"
+	//const d = "mysql"
+	//const sn = "test:test@tcp(db:3306)/test"
 
-	db, err := sql.Open(d, sn)
+	db, err := sql.Open("mysql", "test:test@tcp(db:3306)/test")
 	if err != nil {
 		panic(err.Error)
 	}
